@@ -26,8 +26,6 @@ public class CommandManager
         this.commands.add(new ReloadCommand());
         this.commands.add(new UnloadCommand());
         this.commands.add(new ReloadSoundCommand());
-        this.commands.add(new NameMCCommand());
-        this.commands.add(new DiscordCommand());
     }
 
     public static String[] removeElement(String[] input, int indexToDelete) {

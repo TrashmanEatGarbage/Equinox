@@ -1,19 +1,15 @@
 [
   {
     "modid": "equinox",
-    "name": "Equinox",
+    "name": "Equinox.ware",
     "description": "1.12.2 Anarchy PvP Client",
-    "version": "0.1.0",
+    "version": "0.0.3",
     "mcversion": "1.12.2",
     "logoFile": "niggahack.png",
     "url": "https://discord.gg/WMd6MqCdsF",
     "updateUrl": "",
     "authorList": [
-      "Eonexe",
-      "YeetustheFeetus",
-      "kcp",
-      "1drw",
-      "ot3r"
+      "Eonexe"
     ],
     "screenshots": [],
     "dependencies": []

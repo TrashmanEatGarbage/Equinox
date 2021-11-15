@@ -1,6 +1,5 @@
 package me.eonexe.equinox.util;
 
-import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -9,7 +8,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.*;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.CombatRules;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
@@ -44,10 +42,6 @@ public class DamageUtil
 
     public static boolean canTakeDamage(boolean suicide) {
         return !DamageUtil.mc.player.capabilities.isCreativeMode && !suicide;
-    }
-
-    public static float calculateDamage(Entity crystal, Entity entity) {
-        return DamageUtil.calculateDamage(crystal.posX, crystal.posY, crystal.posZ, entity);
     }
 
     public static float calculateDamage(double posX, double posY, double posZ, Entity entity) {
@@ -131,27 +125,6 @@ public class DamageUtil
     public static boolean hasDurability(ItemStack stack) {
         Item item = stack.getItem();
         return item instanceof ItemArmor || item instanceof ItemSword || item instanceof ItemTool || item instanceof ItemShield;
-    }
-
-    public static boolean isNaked(EntityPlayer player) {
-        for (ItemStack piece : player.inventory.armorInventory) {
-            if (piece == null || piece.isEmpty()) continue;
-            return false;
-        }
-        return true;
-    }
-
-    public static boolean canBreakWeakness(EntityPlayer player) {
-        int strengthAmp = 0;
-        PotionEffect effect = DamageUtil.mc.player.getActivePotionEffect(MobEffects.STRENGTH);
-        if (effect != null) {
-            strengthAmp = effect.getAmplifier();
-        }
-        return !DamageUtil.mc.player.isPotionActive(MobEffects.WEAKNESS) || strengthAmp >= 1 || DamageUtil.mc.player.getHeldItemMainhand().getItem() instanceof ItemSword || DamageUtil.mc.player.getHeldItemMainhand().getItem() instanceof ItemPickaxe || DamageUtil.mc.player.getHeldItemMainhand().getItem() instanceof ItemAxe || DamageUtil.mc.player.getHeldItemMainhand().getItem() instanceof ItemSpade;
-    }
-
-    public static float calculateDamage(BlockPos position) {
-        return 0;
     }
 }
 

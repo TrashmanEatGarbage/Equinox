@@ -16,8 +16,7 @@ public class PopCounter
     public static HashMap<String, Integer> TotemPopContainer = new HashMap();
     private static PopCounter INSTANCE = new PopCounter();
     public Setting<TextUtil.Color> nameColor = register(new Setting("NameColor", TextUtil.Color.WHITE));
-    public Setting<Boolean> face = this.register(new Setting<Boolean>(">:^)", true));
-    public static String custom = ">:^)";
+
 
 
     public PopCounter() {
@@ -44,20 +43,11 @@ public class PopCounter
     public String death1(EntityPlayer player) {
         int l_Count = TotemPopContainer.get(player.getName());
         TotemPopContainer.remove(player.getName());
-        if(!face.getValue().booleanValue()){
-            if (l_Count == 1) {
-                return TextUtil.coloredString(""+ ChatFormatting.BOLD + player.getName() ,nameColor.getValue()) + ChatFormatting.WHITE + " died after popping " + ChatFormatting.DARK_RED + l_Count + " Totem!";
-            } else {
-                return TextUtil.coloredString(""+ ChatFormatting.BOLD + player.getName() ,nameColor.getValue()) + ChatFormatting.WHITE + " died after popping " + ChatFormatting.DARK_RED + l_Count + " Totems!";
-            }
-        }else{
-            if (l_Count == 1) {
-                return TextUtil.coloredString(""+ ChatFormatting.BOLD + player.getName() ,nameColor.getValue()) + ChatFormatting.WHITE + " died after popping " + ChatFormatting.DARK_RED + l_Count + " Totem!" + custom;
-            } else {
-                return TextUtil.coloredString(""+ ChatFormatting.BOLD + player.getName() ,nameColor.getValue()) + ChatFormatting.WHITE + " died after popping " + ChatFormatting.DARK_RED + l_Count + " Totems!" + custom;
-            }
+        if (l_Count == 1) {
+            return TextUtil.coloredString(""+ ChatFormatting.BOLD + player.getName() ,nameColor.getValue()) + ChatFormatting.WHITE + " died after popping " + ChatFormatting.DARK_RED + l_Count + " Totem!";
+        } else {
+            return TextUtil.coloredString(""+ ChatFormatting.BOLD + player.getName() ,nameColor.getValue()) + ChatFormatting.WHITE + " died after popping " + ChatFormatting.DARK_RED + l_Count + " Totems!";
         }
-
     }
 
     public void onDeath(EntityPlayer player) {
@@ -83,22 +73,12 @@ public class PopCounter
         } else {
             TotemPopContainer.put(player.getName(), l_Count);
         }
-        if(!face.getValue().booleanValue()){
-            if (l_Count == 1) {
+        if (l_Count == 1) {
                 return TextUtil.coloredString(""+ ChatFormatting.BOLD + player.getName() ,nameColor.getValue()) + ChatFormatting.WHITE + " popped " + ChatFormatting.DARK_RED + l_Count + " Totem.";
-            } else {
+        } else {
                 return TextUtil.coloredString(""+ ChatFormatting.BOLD + player.getName() ,nameColor.getValue()) + ChatFormatting.WHITE + " popped " + ChatFormatting.DARK_RED + l_Count + " Totems.";
 
-            }
-        }else{
-            if (l_Count == 1) {
-                return TextUtil.coloredString(""+ ChatFormatting.BOLD + player.getName() ,nameColor.getValue()) + ChatFormatting.WHITE + " popped " + ChatFormatting.DARK_RED + l_Count + " Totem." + custom;
-            } else {
-                return TextUtil.coloredString(""+ ChatFormatting.BOLD + player.getName() ,nameColor.getValue()) + ChatFormatting.WHITE + " popped " + ChatFormatting.DARK_RED + l_Count + " Totems." + custom;
-
-            }
         }
-
     }
 
     public void resetPops(final EntityPlayer player) {

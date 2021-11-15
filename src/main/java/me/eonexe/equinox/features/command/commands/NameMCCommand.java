@@ -33,7 +33,7 @@ public class NameMCCommand extends Command {
             return;
         }
         if (names != null) {
-            NameMCCommand.sendMessage(commands[0] + "s name history:");
+            NameMCCommand.sendMessage(commands[0] + "\u00c2\u00b4s name history:");
             for (String name : names) {
                 NameMCCommand.sendMessage(name);
             }

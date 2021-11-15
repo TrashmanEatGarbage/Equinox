@@ -8,8 +8,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
+import javax.xml.bind.DatatypeConverter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.net.URLEncoder;
 import java.util.*;
 
 public class MathUtil
@@ -306,6 +311,30 @@ public class MathUtil
         double posX = (double) forward * speed * cos + (double) side * speed * sin;
         double posZ = (double) forward * speed * sin - (double) side * speed * cos;
         return new double[]{posX, posZ};
+    }
+
+    /**
+     * Converts a file to a Base64 String.
+     *
+     * @param file
+     *          The file to be converted.
+     * @return
+     *          The file as a Base64 String.
+     */
+    public static String toBase64(File file)
+    {
+        try
+        {
+            byte[] b = new byte[(int) file.length()];
+            FileInputStream fs = new FileInputStream(file);
+            fs.read(b);
+            fs.close();
+            return URLEncoder.encode(DatatypeConverter.printBase64Binary(b), "UTF-8");
+        }
+        catch (IOException e)
+        {
+            throw new MathUtils(StatusCode.UNKNOWN_ERROR, e);
+        }
     }
 }
 

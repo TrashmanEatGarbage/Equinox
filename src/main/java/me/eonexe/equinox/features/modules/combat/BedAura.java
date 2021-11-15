@@ -1,5 +1,4 @@
 package me.eonexe.equinox.features.modules.combat;
-
 import com.mojang.realmsclient.gui.ChatFormatting;
 import me.eonexe.equinox.Equinox;
 import me.eonexe.equinox.features.command.Command;
@@ -37,7 +36,7 @@ public class BedAura extends Module {
     public BedAura() {
         super("BedAura", "hiugedawihodjw", Module.Category.COMBAT, true, false, false);
     }
-    
+
     public Setting<Integer> placedelay = register(new Setting<Integer>("Place Delay", 15, 1, 20));
     public Setting<Integer> range = register(new Setting<Integer>("Range", 7, 1, 9));
     public Setting<Boolean> announceUsage = register(new Setting("Announce", true));

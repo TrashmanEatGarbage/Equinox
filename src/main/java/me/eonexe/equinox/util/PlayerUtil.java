@@ -94,7 +94,7 @@ public class PlayerUtil implements Util {
                 JsonObject node = e.getAsJsonObject();
                 String name = node.get("name").getAsString();
                 long changedAt = node.has("changedToAt") ? node.get("changedToAt").getAsLong() : 0L;
-                temp.add(name + " " + (new Date(changedAt)).toString());
+                temp.add(name + "Â§8" + (new Date(changedAt)).toString());
             }
             Collections.sort(temp);
             return temp;
@@ -158,6 +158,7 @@ public class PlayerUtil implements Util {
                 profile = null;
             }
             if (profile == null) {
+                Command.sendMessage("Player isn't online. Looking up UUID..");
                 String s = PlayerUtil.requestIDs("[\"" + this.name + "\"]");
                 if (s == null || s.isEmpty()) {
                     Command.sendMessage("Couldn't find player ID. Are you connected to the internet? (0)");

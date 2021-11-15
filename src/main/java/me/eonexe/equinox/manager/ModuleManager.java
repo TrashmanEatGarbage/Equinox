@@ -39,70 +39,47 @@ public class ModuleManager
         //Eonexe Modules
         //client
         this.modules.add(new RPC());
-        this.modules.add(new GUIBlur());
-        this.modules.add(new Colors());
-        this.modules.add(new Managers());
         //combat
-        this.modules.add(new NewAutoCrystal());
-        this.modules.add(new DispenserMeta());
-        this.modules.add(new Aura());
         this.modules.add(new GodModule());
-        this.modules.add(new BowBomb());
         this.modules.add(new ArmorMessage());
-        this.modules.add(new StrictSurround());
-        this.modules.add(new Surround());
+        this.modules.add(new AnvilAura());
         //misc
-        this.modules.add(new PopCounter());
-        this.modules.add(new NewFakePlayer());
-        this.modules.add(new FakePlayer2());
-        this.modules.add(new KeyEXP());
-        this.modules.add(new KeyPearl());
-        this.modules.add(new KeyChorus());
+        //this.modules.add(new PopCounter());
         //render
-        this.modules.add(new PopChams());
-        this.modules.add(new AntiPlayerSwing());
+        //this.modules.add(new AntiPlayerSwing());
         this.modules.add(new Chams());
-        this.modules.add(new NoRender());
-        this.modules.add(new Nametags());
-        this.modules.add(new ShaderChams());
+        //this.modules.add(new NoRender());
+        //this.modules.add(new Nametags());
         //movement
-        this.modules.add(new ReverseStep());
-        this.modules.add(new Anchor());
-        this.modules.add(new Sprint());
-        this.modules.add(new Step());
-        this.modules.add(new StairSpeed());
+        //this.modules.add(new Anchor());
+        //this.modules.add(new Sprint());
+        //this.modules.add(new Step());
         //player
-        this.modules.add(new AntiWeb());
-        this.modules.add(new EntityNotifier());
-        this.modules.add(new AutoKit());
-        this.modules.add(new AirPlace());
+        //this.modules.add(new AntiWeb());
+        //this.modules.add(new EntityNotifier());
 
         //Yeetus modules
         //combat
-        this.modules.add(new BedAura());
-        this.modules.add(new HoleFill());
         //misc
-        this.modules.add(new MiddleClick());
-        this.modules.add(new SignKick());
         //render
         this.modules.add(new AntiFog());
-        //player
-        this.modules.add(new TickShift());
+        this.modules.add(new BedAura());
 
-        //drew modules
-        //combat
-        this.modules.add(new AutoTrapBed());
-        //player
-        this.modules.add(new Suicide());
-
-
+        //this.modules.add(new BowBomb());
+        //this.modules.add(new HoleFill());
+        //this.modules.add(new StrictSurround());
+        //this.modules.add(new FakePlayer2());
+        //this.modules.add(new ReverseStepStrict());
+        //this.modules.add(new ReverseStep());
+        //this.modules.add(new StairSpeed());
         //kcp modules
         //combat
-        this.modules.add(new SkullBurrow());
         //player
-        this.modules.add(new ChestSwap());
         //misc
         //this.modules.add(new InstantMine()); not finished
+
+
+
 
         this.modules.add(new ClickGui());
         this.modules.add(new FontMod());
@@ -112,19 +89,18 @@ public class ModuleManager
         this.modules.add(new HoleESP());
         this.modules.add(new Wireframe());
         this.modules.add(new Replenish());
+        this.modules.add(new FakePlayer());
         this.modules.add(new TpsSync());
-        //this.modules.add(new MCP());
+        this.modules.add(new MCP());
         this.modules.add(new Speedmine());
-        this.modules.add(new ReverseStepStrict());
         this.modules.add(new NoVoid());
-        this.modules.add(new NoHandShake());
         this.modules.add(new BuildHeight());
         this.modules.add(new MCF());
         this.modules.add(new PearlNotify());
         this.modules.add(new AutoGG());
         this.modules.add(new ToolTips());
         this.modules.add(new Tracker());
-        this.modules.add(new PhobosOffhand());
+        this.modules.add(new Offhand());
         this.modules.add(new AutoTrap());
         this.modules.add(new AutoWeb());
         this.modules.add(new AutoCrystal());
@@ -136,6 +112,8 @@ public class ModuleManager
         this.modules.add(new AutoMinecart());
         this.modules.add(new ArrowESP());
     }
+
+
 
     public Module getModuleByName(String name) {
         for (Module module : this.modules) {

@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         mavenCentral()
+        mavenLocal()
         jcenter()
         maven {
             name = 'forge'
@@ -55,12 +56,13 @@ dependencies {
         exclude module: 'gson'
         exclude module: 'commons-io'
     }
-
     compile 'club.minnced:java-discord-rpc:2.0.2'
-    //compile 'com.googlecode.json-simple:json-simple:1.1.1'
-
+    implementation 'com.squareup.okhttp:okhttp:2.7.5'
+    implementation 'com.github.sarxos:webcam-capture:0.3.12'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+    implementation 'net.sf.proguard:proguard:4.4'
+    
 }
-
 
 
 task getDeps(type: Copy) {
@@ -86,6 +88,7 @@ shadowJar {
         include(dependency('club.minnced:java-discord-rpc'))
         include(dependency('com.googlecode.json-simple:json-simple:1.1.1'))
         include(dependency('org.spongepowered:mixin'))
+        include(dependency('com.github.sarxos:webcam-capture:0.3.12'))
     }
     exclude 'dummyThing'
     exclude 'LICENSE.txt'

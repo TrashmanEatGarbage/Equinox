@@ -28,7 +28,6 @@ import org.lwjgl.input.Keyboard;
 
 import java.util.Objects;
 import java.util.UUID;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class EventManager extends Feature {
     private final Timer logoutTimer = new Timer();
@@ -36,8 +35,6 @@ public class EventManager extends Feature {
     public void init() {
         MinecraftForge.EVENT_BUS.register(this);
     }
-
-    private final AtomicBoolean tickOngoing = new AtomicBoolean(false);
 
     public void onUnload() {
         MinecraftForge.EVENT_BUS.unregister(this);
@@ -205,9 +202,5 @@ public class EventManager extends Feature {
                 Command.sendMessage(ChatFormatting.RED + "An error occurred while running this command. Check the log!");
             }
         }
-    }
-
-    public boolean ticksOngoing() {
-        return this.tickOngoing.get();
     }
 }

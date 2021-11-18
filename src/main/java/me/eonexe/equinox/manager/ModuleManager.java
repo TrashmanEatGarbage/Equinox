@@ -94,6 +94,8 @@ public class ModuleManager
         this.modules.add(new AutoTrapBed());
         //player
         this.modules.add(new Suicide());
+        //render
+        this.modules.add(new SmallShield());
 
 
         //kcp modules

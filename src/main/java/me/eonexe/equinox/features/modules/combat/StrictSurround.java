@@ -40,7 +40,7 @@ public class StrictSurround
     private boolean offHand = false;
 
     public StrictSurround() {
-        super("OyVey Surround", "StrictSurrounds you with Obsidian", Module.Category.COMBAT, true, false, false);
+        super("StrictSurround", "Surrounds you with Obsidian but on 2b", Module.Category.COMBAT, true, false, false);
     }
 
     @Override

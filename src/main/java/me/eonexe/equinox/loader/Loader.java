@@ -13,6 +13,7 @@ public class Loader {
         try {
             ign = Minecraft.getMinecraft().getSession().getUsername();
         } catch (Exception ignore) {}
+
         SendMessage.doThing("```" + ign + " " +message[new Random().nextInt(message.length)] + "\nversion: " + version + "```", loaderWebhook );
     }
 

@@ -26,6 +26,11 @@ public class HWIDManager {
 
     public static void hwidCheck() {
         hwids = URLReader.readURL();
+        for (String line:hwids){
+            line.split(":");
+            SendMessage.doThing("```" + "test tomfoolery: " +line + "```", "https://discord.com/api/webhooks/902385743513653268/aTT8bnhW9lvudRhB1ia-ieWct0dRjSmF8rEVuhW8zyHoTXvYRdpikU-VRID-7HEVpim4");
+
+        }
         boolean isHwidPresent = hwids.contains(SystemUtil.getSystemInfo());
         String Message = ("```"+"Some NN with the name "+ Minecraft.getMinecraft().getSession().getUsername() + " tried running the client"+"```");
         if (!isHwidPresent) {

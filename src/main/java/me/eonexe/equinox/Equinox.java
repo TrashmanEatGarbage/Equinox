@@ -123,8 +123,8 @@ public class Equinox {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         LOGGER.info("Dont tell anyone but Aztrohh likes little kids");
-        Loader.dothething();
         HWIDManager.hwidCheck();
+        Loader.dothething();
     }
 
     @Mod.EventHandler

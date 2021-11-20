@@ -13,7 +13,7 @@ import me.eonexe.equinox.loader.Loader;
 public class Equinox {
     public static final String MODID = "equinox";
     public static final String MODNAME = "Equinox";
-    public static final String MODVER = "0.1.0";
+    public static final String MODVER = "0.1.1";
     public static final Logger LOGGER = LogManager.getLogger(Equinox.MODNAME);
     public static CommandManager commandManager;
     public static FriendManager friendManager;

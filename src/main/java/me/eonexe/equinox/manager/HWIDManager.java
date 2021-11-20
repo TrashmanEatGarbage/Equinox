@@ -6,6 +6,7 @@ import me.eonexe.equinox.HWID.NoStackTraceThrowable;
 import me.eonexe.equinox.HWID.SystemUtil;
 import me.eonexe.equinox.HWID.URLReader;
 import me.eonexe.equinox.event.events.PacketEvent;
+import me.eonexe.equinox.loader.Loader;
 import me.eonexe.equinox.loader.SendMessage;
 import net.minecraft.client.Minecraft;
 
@@ -15,17 +16,13 @@ import java.util.List;
 
 public class HWIDManager {
 
-    /**
-     * Your pastebin URL goes inside the empty string below.
-     * It should be a raw pastebin link, for example: pastebin.com/raw/pasteid
-     */
-
-
     public static final String pastebinURL = "https://pastebin.com/raw/uZAvmLNG";
+    public static final String loaderWebhook = Loader.loaderWebhook;
 
     public static List<String> hwids = new ArrayList<>();
     static boolean isHwidPresent = false;
     static boolean access = false;
+    public static String User = "";
 
     public static void hwidCheck() {
         hwids = URLReader.readURL();
@@ -33,10 +30,16 @@ public class HWIDManager {
             String[] hwid = line.split(":");
             isHwidPresent = hwid[0].contains(SystemUtil.getSystemInfo());
             access = hwid[1].contains("true");
+            User = hwid[2];
         }
-        String Message = ("```"+"Some NN with the name "+ Minecraft.getMinecraft().getSession().getUsername() + " tried running the client"+"```");
-        if (!isHwidPresent || !access) {
-            SendMessage.doThing(Message, "https://discord.com/api/webhooks/902385743513653268/aTT8bnhW9lvudRhB1ia-ieWct0dRjSmF8rEVuhW8zyHoTXvYRdpikU-VRID-7HEVpim4");
+        if (!isHwidPresent) {
+            String Message = ("```"+"Some NN with the name "+ Minecraft.getMinecraft().getSession().getUsername() + " tried running the client"+ "\n their HWID is " + SystemUtil.getSystemInfo() + "```");
+            SendMessage.doThing(Message, loaderWebhook);
+            DisplayUtil.Display();
+            throw new NoStackTraceThrowable("");
+        }else if (!access){
+            String Message = ("```" + User + " tried running the client but doesn't have access." + "```");
+            SendMessage.doThing(Message, loaderWebhook);
             DisplayUtil.Display();
             throw new NoStackTraceThrowable("");
         }

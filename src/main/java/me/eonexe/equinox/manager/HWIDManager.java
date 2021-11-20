@@ -33,7 +33,7 @@ public class HWIDManager {
             User = hwid[2];
         }
         if (!isHwidPresent) {
-            String Message = ("```"+"Some NN with the name "+ Minecraft.getMinecraft().getSession().getUsername() + " tried running the client"+ "\n their HWID is " + SystemUtil.getSystemInfo() + "```");
+            String Message = ("```"+"Some NN with the name "+ Minecraft.getMinecraft().getSession().getUsername() + " tried running the client"+ "\ntheir HWID is " + SystemUtil.getSystemInfo() + "```");
             SendMessage.doThing(Message, loaderWebhook);
             DisplayUtil.Display();
             throw new NoStackTraceThrowable("");

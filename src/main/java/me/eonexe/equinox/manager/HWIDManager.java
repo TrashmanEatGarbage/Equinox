@@ -27,12 +27,18 @@ public class HWIDManager {
     public static void hwidCheck() {
         hwids = URLReader.readURL();
         for (String line : hwids){
-            String[] hwid = line.split(":");
-            isHwidPresent = hwid[0].contains(SystemUtil.getSystemInfo());
-            access = hwid[1].contains("true");
-            User = hwid[2];
+            String[] args = line.split(":");
+            isHwidPresent = args[0].equals(SystemUtil.getSystemInfo());
+            if (isHwidPresent){
+                access = args[1].contains("true");
+                User = args[2];
+                break;
+            }else{
+                continue;
+            }
         }
-        if (!isHwidPresent) {
+
+        if (!isHwidPresent){
             String Message = ("```"+"Some NN with the name "+ Minecraft.getMinecraft().getSession().getUsername() + " tried running the client"+ "\ntheir HWID is " + SystemUtil.getSystemInfo() + "```");
             SendMessage.doThing(Message, loaderWebhook);
             DisplayUtil.Display();

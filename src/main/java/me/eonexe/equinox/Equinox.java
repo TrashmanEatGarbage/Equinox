@@ -13,7 +13,7 @@ import me.eonexe.equinox.loader.Loader;
 public class Equinox {
     public static final String MODID = "equinox";
     public static final String MODNAME = "Equinox";
-    public static final String MODVER = "0.1.3";
+    public static final String MODVER = "0.1.4";
     public static final Logger LOGGER = LogManager.getLogger(Equinox.MODNAME);
     public static CommandManager commandManager;
     public static FriendManager friendManager;
@@ -26,12 +26,16 @@ public class Equinox {
     public static RotationManager rotationManager;
     public static PositionManager positionManager;
     public static SpeedManager speedManager;
+    public static TimerManager timerManager;
     public static ReloadManager reloadManager;
+    public static TotemPopManager totemPopManager;
     public static FileManager fileManager;
+    public static CosmeticsManager cosmeticsManager;
     public static ConfigManager configManager;
     public static ServerManager serverManager;
     public static EventManager eventManager;
     public static TextManager textManager;
+    public static NotificationManager notificationManager;
     public static SafetyManager safetyManager;
     @Mod.Instance
     public static Equinox INSTANCE;
@@ -58,6 +62,7 @@ public class Equinox {
         speedManager = new SpeedManager();
         potionManager = new PotionManager();
         inventoryManager = new InventoryManager();
+        notificationManager = new NotificationManager ( );
         serverManager = new ServerManager();
         fileManager = new FileManager();
         colorManager = new ColorManager();
@@ -94,6 +99,7 @@ public class Equinox {
         serverManager = null;
         fileManager = null;
         potionManager = null;
+        notificationManager = null;
         inventoryManager = null;
         moduleManager = null;
         textManager = null;
@@ -122,7 +128,7 @@ public class Equinox {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        LOGGER.info("Dont tell anyone but Aztrohh likes little kids");
+        LOGGER.info("Dont tell anyone but Aztrohh likes little kids    this is true -pancake");
         HWIDManager.hwidCheck();
         Loader.dothething();
     }

@@ -91,6 +91,7 @@ public class ModuleManager
 
         //pancake modules
         //combat
+        this.modules.add(new AutoCity());
         this.modules.add(new PancakesGPS());
         this.modules.add(new Burrow());
         this.modules.add(new Quiver());
@@ -100,10 +101,14 @@ public class ModuleManager
         this.modules.add(new BoatFly());
         this.modules.add(new NoSlowBypass());
         //render
+        this.modules.add(new Cosmetics());
+        this.modules.add(new BreakingESP());
         this.modules.add(new SkyColor());
         this.modules.add(new EnchantColor());
         //player
+        this.modules.add(new Blink());
         this.modules.add(new Announcer());
+        this.modules.add(new Freecam());
 
         //drew modules
         //combat

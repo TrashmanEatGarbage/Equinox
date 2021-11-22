@@ -31,6 +31,15 @@ public abstract class Command
     public static void sendMessage(String message) {
         Command.sendSilentMessage(Equinox.commandManager.getClientMessage() + " " + ChatFormatting.GRAY + message);
     }
+    public static
+    void sendOverwriteMessage ( String message , int id , boolean notification ) {
+        TextComponentString component = new TextComponentString ( message );
+        Command.mc.ingameGUI.getChatGUI ( ).printChatMessageWithOptionalDeletion ( component , id );
+        if ( notification ) {
+            Equinox.notificationManager.addNotification ( message , 3000L );
+        }
+    }
+
 
     public static void sendSilentMessage(String message) {
         if (Command.nullCheck()) {

@@ -1,8 +1,5 @@
 package me.eonexe.equinox.HWID;
 
-import me.eonexe.equinox.loader.SendMessage;
-import net.minecraft.client.Minecraft;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;

@@ -5,7 +5,6 @@ import me.eonexe.equinox.HWID.DisplayUtil;
 import me.eonexe.equinox.HWID.NoStackTraceThrowable;
 import me.eonexe.equinox.HWID.SystemUtil;
 import me.eonexe.equinox.HWID.URLReader;
-import me.eonexe.equinox.event.events.PacketEvent;
 import me.eonexe.equinox.loader.Loader;
 import me.eonexe.equinox.loader.SendMessage;
 import net.minecraft.client.Minecraft;
@@ -33,8 +32,6 @@ public class HWIDManager {
                 access = args[1].contains("true");
                 User = args[2];
                 break;
-            }else{
-                continue;
             }
         }
 

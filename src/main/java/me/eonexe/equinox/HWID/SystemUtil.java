@@ -1,6 +1,5 @@
 package me.eonexe.equinox.HWID;
 
-import net.minecraft.client.Minecraft;
 import org.apache.commons.codec.digest.DigestUtils;
 
 public class SystemUtil {

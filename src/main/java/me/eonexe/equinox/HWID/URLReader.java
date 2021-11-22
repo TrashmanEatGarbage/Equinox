@@ -1,10 +1,6 @@
 package me.eonexe.equinox.HWID;
 
-import net.minecraft.client.Minecraft;
-import org.apache.commons.codec.digest.DigestUtils;
-
 import me.eonexe.equinox.manager.HWIDManager;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;

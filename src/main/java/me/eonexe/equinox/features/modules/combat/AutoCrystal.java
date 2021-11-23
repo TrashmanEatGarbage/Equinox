@@ -130,7 +130,7 @@ public class AutoCrystal
 
     @SubscribeEvent
     public void onPacketSend(PacketEvent.Send event) {
-        if (event.getStage() == 0 && this.rotate.getValue().booleanValue() && this.rotating && event.getPacket() instanceof CPacketPlayer) {
+        if (event.getStage() == 0 && this.rotate.getValue() && this.rotating && event.getPacket() instanceof CPacketPlayer) {
             CPacketPlayer packet = event.getPacket();
             packet.yaw = this.yaw;
             packet.pitch = this.pitch;

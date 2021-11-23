@@ -1,8 +1,17 @@
 package me.eonexe.equinox.util;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityPlayerSP;
 
 public interface Util {
-    Minecraft mc = Minecraft.getMinecraft();
-}
 
+    public static EntityPlayerSP getPlayer() {
+        return getMinecraft().player;
+    }
+
+    public static Minecraft getMinecraft() {
+        return Minecraft.getMinecraft();
+    }
+
+    public static final Minecraft mc = Minecraft.getMinecraft();
+}

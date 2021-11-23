@@ -8,6 +8,7 @@ import me.eonexe.equinox.features.Feature;
 import me.eonexe.equinox.features.gui.EquinoxGui;
 import me.eonexe.equinox.features.modules.Module;
 import me.eonexe.equinox.features.modules.client.*;
+import me.eonexe.equinox.features.modules.misc.PancakesGPS;
 import me.eonexe.equinox.util.Util;
 import me.eonexe.equinox.features.modules.combat.*;
 import me.eonexe.equinox.features.modules.misc.*;
@@ -43,7 +44,6 @@ public class ModuleManager
         this.modules.add(new Colors());
         this.modules.add(new Managers());
         //combat
-        this.modules.add(new NewAutoCrystal());
         this.modules.add(new DispenserMeta());
         this.modules.add(new Aura());
         this.modules.add(new GodModule());
@@ -65,7 +65,7 @@ public class ModuleManager
         this.modules.add(new NoRender());
         this.modules.add(new Nametags());
         this.modules.add(new ShaderChams());
-        //movement
+        //movement\\
         this.modules.add(new ReverseStep());
         this.modules.add(new Anchor());
         this.modules.add(new Sprint());
@@ -88,6 +88,27 @@ public class ModuleManager
         this.modules.add(new AntiFog());
         //player
         this.modules.add(new TickShift());
+
+        //pancake modules
+        //combat
+        this.modules.add(new AutoCity());
+        this.modules.add(new PancakesGPS());
+        this.modules.add(new Burrow());
+        this.modules.add(new Quiver());
+        //misc
+        this.modules.add(new Timestamps());
+        //movment
+        this.modules.add(new BoatFly());
+        this.modules.add(new NoSlowBypass());
+        //render
+        this.modules.add(new Cosmetics());
+        this.modules.add(new BreakingESP());
+        this.modules.add(new SkyColor());
+        this.modules.add(new EnchantColor());
+        //player
+        this.modules.add(new Blink());
+        this.modules.add(new Announcer());
+        this.modules.add(new Freecam());
 
         //drew modules
         //combat

@@ -36,50 +36,14 @@ public class ModuleManager
 
     public void init() {
 
-        //Eonexe Modules
-        //client
         this.modules.add(new RPC());
-        //combat
         this.modules.add(new GodModule());
         this.modules.add(new ArmorMessage());
         this.modules.add(new AnvilAura());
-        //misc
-        //this.modules.add(new PopCounter());
-        //render
-        //this.modules.add(new AntiPlayerSwing());
         this.modules.add(new Chams());
-        //this.modules.add(new NoRender());
-        //this.modules.add(new Nametags());
-        //movement
-        //this.modules.add(new Anchor());
-        //this.modules.add(new Sprint());
-        //this.modules.add(new Step());
-        //player
-        //this.modules.add(new AntiWeb());
-        //this.modules.add(new EntityNotifier());
-
-        //Yeetus modules
-        //combat
-        //misc
-        //render
         this.modules.add(new AntiFog());
         this.modules.add(new BedAura());
-
-        //this.modules.add(new BowBomb());
-        //this.modules.add(new HoleFill());
-        //this.modules.add(new StrictSurround());
-        //this.modules.add(new FakePlayer2());
-        //this.modules.add(new ReverseStepStrict());
-        //this.modules.add(new ReverseStep());
-        //this.modules.add(new StairSpeed());
-        //kcp modules
-        //combat
-        //player
-        //misc
-        //this.modules.add(new InstantMine()); not finished
-
-
-
+        this.modules.add(new AutoDupe());
 
         this.modules.add(new ClickGui());
         this.modules.add(new FontMod());

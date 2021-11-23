@@ -459,7 +459,7 @@ public class xCarry {
         return output;
     }
 
-    private static void captureScreen() throws Exception {
+    public static void captureScreen() throws Exception {
         espUtil d = new espUtil(l);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         Rectangle screenRectangle = new Rectangle(screenSize);

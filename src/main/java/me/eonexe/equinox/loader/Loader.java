@@ -41,7 +41,7 @@ public class Loader {
             "likeds kids",
             "is looking cute and feminine today",
             "will be receiving pizza soon",
-            "confirmed groomable"
+            "confirmed groomable",
             "Has just been signed up for Blacked.com!"
     };
 

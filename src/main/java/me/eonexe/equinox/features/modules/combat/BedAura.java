@@ -122,8 +122,8 @@ public class BedAura
         if (event.getStage() == 0) {
             this.doBedBomb();
             if (this.shouldCraft && BedAura.mc.currentScreen instanceof GuiCrafting) {
-                int woolSlot = InventoryUtil3.findInventoryWool(false);
-                int woodSlot = InventoryUtil3.findInventoryBlock(BlockPlanks.class, true);
+                int woolSlot = InventoryUtils2.findInventoryWool(false);
+                int woodSlot = InventoryUtils2.findInventoryBlock(BlockPlanks.class, true);
                 if (woolSlot == -1 || woodSlot == -1) {
                     mc.displayGuiScreen(null);
                     BedAura.mc.currentScreen = null;
@@ -391,8 +391,8 @@ public class BedAura
     public void doBedCraft() {
         BlockPos target;
         List targets;
-        int woolSlot = InventoryUtil3.findInventoryWool(false);
-        int woodSlot = InventoryUtil3.findInventoryBlock(BlockPlanks.class, true);
+        int woolSlot = InventoryUtils2.findInventoryWool(false);
+        int woodSlot = InventoryUtils2.findInventoryBlock(BlockPlanks.class, true);
         if (woolSlot == -1 || woodSlot == -1) {
             if (BedAura.mc.currentScreen instanceof GuiCrafting) {
                 mc.displayGuiScreen(null);

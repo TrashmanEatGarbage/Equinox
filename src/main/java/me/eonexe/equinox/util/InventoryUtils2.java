@@ -2,6 +2,7 @@ package me.eonexe.equinox.util;
 
 import me.eonexe.equinox.Equinox;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.init.Enchantments;
@@ -40,6 +41,21 @@ public class InventoryUtils2
             InventoryUtil.switchToHotbarSlot(slot, silent);
         }
     }
+
+    public static int findInventoryWool(boolean offHand) {
+        AtomicInteger slot = new AtomicInteger();
+        slot.set(-1);
+        for (Map.Entry<Integer, ItemStack> entry : InventoryUtils2.getInventoryAndHotbarSlots().entrySet()) {
+            if (!(entry.getValue().getItem() instanceof ItemBlock)) continue;
+            ItemBlock wool = (ItemBlock) entry.getValue().getItem();
+            if (wool.getBlock().material != Material.CLOTH || entry.getKey() == 45 && !offHand) continue;
+            slot.set(entry.getKey());
+            return slot.get();
+        }
+        return slot.get();
+    }
+
+
 
     public static boolean isNull(ItemStack stack) {
         return stack == null || stack.getItem() instanceof ItemAir;

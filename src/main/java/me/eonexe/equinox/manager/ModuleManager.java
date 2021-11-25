@@ -50,7 +50,6 @@ public class ModuleManager
         this.modules.add(new BowBomb());
         this.modules.add(new ArmorMessage());
         this.modules.add(new StrictSurround());
-        this.modules.add(new Surround());
         //misc
         this.modules.add(new PopCounter());
         this.modules.add(new NewFakePlayer());
@@ -79,8 +78,8 @@ public class ModuleManager
 
         //Yeetus modules
         //combat
-        //i made bedaura soo
-        //and the holefiller
+        this.modules.add(new GapPoop());
+        this.modules.add(new NewSurround());
         //misc
         this.modules.add(new MiddleClick());
         this.modules.add(new SignKick());

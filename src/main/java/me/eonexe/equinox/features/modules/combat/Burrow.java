@@ -172,47 +172,47 @@ public class Burrow extends Module {
         }
         switch (this.mode.getValue()) {
             case Obsidian: {
-                Ihatemylife.switchToSlot(InventoryUtil.findHotbarBlock(BlockObsidian.class));
+                InventoryUtil2.switchToSlot(InventoryUtil.findHotbarBlock(BlockObsidian.class));
                 break;
             }
             case EnderChest: {
-                Ihatemylife.switchToSlot(InventoryUtil.findHotbarBlock(BlockEnderChest.class));
+                InventoryUtil2.switchToSlot(InventoryUtil.findHotbarBlock(BlockEnderChest.class));
                 break;
             }
             case Chest: {
-                Ihatemylife.switchToSlot(InventoryUtil.findHotbarBlock(BlockChest.class));
+                InventoryUtil2.switchToSlot(InventoryUtil.findHotbarBlock(BlockChest.class));
                 break;
             }
             case Anvil: {
-                Ihatemylife.switchToSlot(InventoryUtil.findHotbarBlock(BlockAnvil.class));
+                InventoryUtil2.switchToSlot(InventoryUtil.findHotbarBlock(BlockAnvil.class));
                 break;
             }
             case EnchantingTable: {
-                Ihatemylife.switchToSlot(InventoryUtil.findHotbarBlock(BlockEnchantmentTable.class));
+                InventoryUtil2.switchToSlot(InventoryUtil.findHotbarBlock(BlockEnchantmentTable.class));
                 break;
             }
             case DragonEgg: {
-                Ihatemylife.switchToSlot(InventoryUtil.findHotbarBlock(BlockDragonEgg.class));
+                InventoryUtil2.switchToSlot(InventoryUtil.findHotbarBlock(BlockDragonEgg.class));
                 break;
             }
             case Stone: {
-                Ihatemylife.switchToSlot(InventoryUtil.findHotbarBlock(BlockStone.class));
+                InventoryUtil2.switchToSlot(InventoryUtil.findHotbarBlock(BlockStone.class));
                 break;
             }
             case Dropper: {
-                Ihatemylife.switchToSlot(InventoryUtil.findHotbarBlock(BlockDropper.class));
+                InventoryUtil2.switchToSlot(InventoryUtil.findHotbarBlock(BlockDropper.class));
                 break;
             }
             case Dispenser: {
-                Ihatemylife.switchToSlot(InventoryUtil.findHotbarBlock(BlockDispenser.class));
+                InventoryUtil2.switchToSlot(InventoryUtil.findHotbarBlock(BlockDispenser.class));
                 break;
             }
             case Hopper: {
-                Ihatemylife.switchToSlot(InventoryUtil.findHotbarBlock(BlockHopper.class));
+                InventoryUtil2.switchToSlot(InventoryUtil.findHotbarBlock(BlockHopper.class));
                 break;
             }
             case Cake: {
-                Ihatemylife.switchToSlot(InventoryUtil.findHotbarBlock(BlockCake.class));
+                InventoryUtil2.switchToSlot(InventoryUtil.findHotbarBlock(BlockCake.class));
                 break;
             }
         }
@@ -220,11 +220,11 @@ public class Burrow extends Module {
         Burrow.mc.player.connection.sendPacket(new CPacketPlayer.Position(Burrow.mc.player.posX, Burrow.mc.player.posY + 0.7531999805211997, Burrow.mc.player.posZ, true));
         Burrow.mc.player.connection.sendPacket(new CPacketPlayer.Position(Burrow.mc.player.posX, Burrow.mc.player.posY + 1.00133597911214, Burrow.mc.player.posZ, true));
         Burrow.mc.player.connection.sendPacket(new CPacketPlayer.Position(Burrow.mc.player.posX, Burrow.mc.player.posY + 1.16610926093821, Burrow.mc.player.posZ, true));
-        Ihatemylife.placeBlock(this.originalPos, EnumHand.MAIN_HAND, this.rotate.getValue(), true, false);
+        InventoryUtil2.placeBlock(this.originalPos, EnumHand.MAIN_HAND, this.rotate.getValue(), true, false);
         Burrow.mc.player.connection.sendPacket(new CPacketPlayer.Position(Burrow.mc.player.posX, Burrow.mc.player.posY + (double) this.offset.getValue().intValue(), Burrow.mc.player.posZ, false));
         Burrow.mc.player.connection.sendPacket(new CPacketEntityAction(Burrow.mc.player, CPacketEntityAction.Action.STOP_SNEAKING));
         Burrow.mc.player.setSneaking(false);
-        Ihatemylife.switchToSlot(this.oldSlot);
+        InventoryUtil2.switchToSlot(this.oldSlot);
         if (autoDisable.getValue()) {
             this.disable();
         }

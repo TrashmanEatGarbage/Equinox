@@ -6,7 +6,9 @@ import net.minecraft.entity.Entity;
 import net.minecraftforge.fml.common.eventhandler.Cancelable;
 
 @Cancelable
-public class RenderEntityModelEvent extends EventStage {
+public
+class RenderEntityModelEvent
+        extends EventStage {
     public ModelBase modelBase;
     public Entity entity;
     public float limbSwing;

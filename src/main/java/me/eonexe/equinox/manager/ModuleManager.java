@@ -79,8 +79,8 @@ public class ModuleManager
 
         //Yeetus modules
         //combat
-        this.modules.add(new BedAura());
-        this.modules.add(new HoleFill());
+        //i made bedaura soo
+        //and the holefiller
         //misc
         this.modules.add(new MiddleClick());
         this.modules.add(new SignKick());
@@ -91,6 +91,8 @@ public class ModuleManager
 
         //pancake modules
         //combat
+        this.modules.add(new HoleFiller());
+        this.modules.add(new BedAura());
         this.modules.add(new AutoCity());
         this.modules.add(new PancakesGPS());
         this.modules.add(new Burrow());
@@ -99,6 +101,8 @@ public class ModuleManager
         this.modules.add(new Timestamps());
         //movment
         this.modules.add(new BoatFly());
+        this.modules.add(new Flight());
+        this.modules.add(new Phase());
         this.modules.add(new NoSlowBypass());
         //render
         this.modules.add(new Cosmetics());
@@ -106,6 +110,7 @@ public class ModuleManager
         this.modules.add(new SkyColor());
         this.modules.add(new EnchantColor());
         //player
+        this.modules.add(new OppDetector());
         this.modules.add(new Blink());
         this.modules.add(new Announcer());
         this.modules.add(new Freecam());
@@ -147,7 +152,7 @@ public class ModuleManager
         this.modules.add(new AutoGG());
         this.modules.add(new ToolTips());
         this.modules.add(new Tracker());
-        this.modules.add(new PhobosOffhand());
+        this.modules.add(new Offhand());
         this.modules.add(new AutoTrap());
         this.modules.add(new AutoWeb());
         this.modules.add(new AutoCrystal());

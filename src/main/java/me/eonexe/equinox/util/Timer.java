@@ -35,8 +35,9 @@ public class Timer {
         return this.getMs(System.nanoTime() - this.time);
     }
 
-    public void reset() {
+    public Timer reset() {
         this.time = System.nanoTime();
+        return null;
     }
 
     public long getMs(long time) {

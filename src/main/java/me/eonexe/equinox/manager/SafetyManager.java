@@ -2,7 +2,7 @@ package me.eonexe.equinox.manager;
 
 import me.eonexe.equinox.features.Feature;
 import me.eonexe.equinox.features.modules.client.Managers;
-import me.eonexe.equinox.features.modules.combat.NewAutoCrystal;
+import me.eonexe.equinox.features.modules.combat.AutoCrystal;
 import me.eonexe.equinox.util.BlockUtil;
 import me.eonexe.equinox.util.DamageUtil;
 import me.eonexe.equinox.util.EntityUtil;
@@ -27,7 +27,7 @@ public class SafetyManager
 
     @Override
     public void run() {
-        if (NewAutoCrystal.getInstance().isOff() || NewAutoCrystal.getInstance().threadMode.getValue() == NewAutoCrystal.ThreadMode.NONE) {
+        if (AutoCrystal.getInstance().isOff() || AutoCrystal.getInstance().threadMode.getValue() == AutoCrystal.ThreadMode.NONE) {
             this.doSafetyCheck();
         }
     }

@@ -1,2 +1,1 @@
-ASHUR IS DONE GUYS HES BEEN DOXXED!!!!
-m
+read if like kids

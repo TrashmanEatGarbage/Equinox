@@ -31,6 +31,18 @@ public class Loader {
             "is a blm activists",
             "did the thing",
             "didn't die at astroworld",
+            "just entered the 1tb cp giveaway",
+            "loves femboy cock",
+            "is taking thigh pics",
+            "'s game will crash in 30 minutes",
+            "<--- faggot",
+            "is citying big grin",
+            "'s dick just shrunk by 2.5cm",
+            "likeds kids",
+            "is looking cute and feminine today",
+            "will be receiving pizza soon",
+            "confirmed groomable"
+            "Has just been signed up for Blacked.com!"
     };
 
 }

@@ -99,12 +99,16 @@ public class ModuleManager
         //misc
         this.modules.add(new Timestamps());
         //movment
+        this.modules.add(new Strafe());
+        this.modules.add(new LongJump());
         this.modules.add(new BoatFly());
+        this.modules.add(new ElytraFly());
         this.modules.add(new Flight());
         this.modules.add(new Phase());
         this.modules.add(new NoSlowBypass());
         //render
         this.modules.add(new Cosmetics());
+        this.modules.add(new ProjectileTrails());
         this.modules.add(new BreakingESP());
         this.modules.add(new SkyColor());
         this.modules.add(new EnchantColor());

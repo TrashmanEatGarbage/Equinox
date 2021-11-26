@@ -8,7 +8,7 @@ import me.eonexe.equinox.features.Feature;
 import me.eonexe.equinox.features.gui.EquinoxGui;
 import me.eonexe.equinox.features.modules.Module;
 import me.eonexe.equinox.features.modules.client.*;
-import me.eonexe.equinox.features.modules.misc.PancakesGPS;
+import me.eonexe.equinox.features.modules.combat.PancakesGPS;
 import me.eonexe.equinox.util.Util;
 import me.eonexe.equinox.features.modules.combat.*;
 import me.eonexe.equinox.features.modules.misc.*;

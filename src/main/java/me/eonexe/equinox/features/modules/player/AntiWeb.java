@@ -4,7 +4,6 @@ import me.eonexe.equinox.features.modules.Module;
 import me.eonexe.equinox.features.setting.Setting;
 import me.eonexe.equinox.util.EntityUtil;
 
-//made by sjnez
 
 public class AntiWeb extends Module {
     private final Setting<Boolean> HoleOnly;

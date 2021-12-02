@@ -24,8 +24,6 @@ public class GapPoop
         super("GapPoop", "gapPoop", Category.COMBAT,true,false,false);
         this.switchBackTimer.setDelay((delay.getValue()).longValue()); }
 
-
-
     @SubscribeEvent
     public void onUpdate(TickEvent.ClientTickEvent event) {
         if (NullUtils.nullCheck()) {

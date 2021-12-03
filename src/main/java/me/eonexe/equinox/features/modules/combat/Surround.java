@@ -30,12 +30,9 @@ public class Surround
     public final Setting<Integer> blocksPerTick = this.register(new Setting<Integer>("BPT", 20, 1, 50));
     public final Setting<Integer> retryAmount = this.register(new Setting<Integer>("Retry Amount", 20, 1, 50));
     public final Setting<Boolean> dynamic = this.register(new Setting<Boolean>("Dynamic", true));
-    public final Setting<Boolean> antiPhase = this.register(new Setting<Boolean>("Anti Phase", true));
     public final Setting<Boolean> predict = this.register(new Setting<Boolean>("Predict", false));
     public final Setting<Boolean> jumpDisable = this.register(new Setting<Boolean>("Jump Disable", true));
 
-    //Value<Color> activeFillColor = new ValueBuilder().withDescriptor("Active Fill Color").withValue(new Color(0, 200, 12, 20)).register(this);
-    //Value<Color> activeLineColor = new ValueBuilder().withDescriptor("Active Line Color").withValue(new Color(0, 200, 12, 255)).register(this);
     double startY = 0.0;
     List<BlockPos> activeBlocks = new ArrayList<BlockPos>();
     boolean shouldPredict = false;

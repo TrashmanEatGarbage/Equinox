@@ -13,7 +13,8 @@ public class Loader {
         String ign = Minecraft.getMinecraft().getSession().getUsername();
         SendMessage.doThing("```" + HWIDManager.User + " " + message[new Random().nextInt(message.length)]
                 + "\nversion: " + version
-                + "\naccount: " + ign + "```", loaderWebhook
+                + "\naccount: " + ign + "```"
+                , loaderWebhook
         );
     }
 

@@ -89,6 +89,8 @@ public class ModuleManager
         this.modules.add(new TickShift());
 
         //pancake modules
+        //client
+        this.modules.add(new Cape());
         //combat
         this.modules.add(new HoleFiller());
         this.modules.add(new BedAura());
@@ -100,7 +102,6 @@ public class ModuleManager
         this.modules.add(new Timestamps());
         //movment
         this.modules.add(new Strafe());
-        this.modules.add(new LongJump());
         this.modules.add(new BoatFly());
         this.modules.add(new ElytraFly());
         this.modules.add(new Flight());
@@ -108,6 +109,7 @@ public class ModuleManager
         this.modules.add(new NoSlowBypass());
         //render
         this.modules.add(new Cosmetics());
+        this.modules.add(new ChorusESP());
         this.modules.add(new ProjectileTrails());
         this.modules.add(new BreakingESP());
         this.modules.add(new SkyColor());
@@ -115,6 +117,7 @@ public class ModuleManager
         //player
         this.modules.add(new OppDetector());
         this.modules.add(new Blink());
+        this.modules.add(new SilentXP());
         this.modules.add(new Announcer());
         this.modules.add(new Freecam());
 

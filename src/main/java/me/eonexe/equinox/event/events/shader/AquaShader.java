@@ -16,7 +16,6 @@ extends FramebufferShader {
     public AquaShader() {
         super("aqua.frag");
     }
-
     @Override
     public void setupUniforms() {
         this.setupUniform("resolution");

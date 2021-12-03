@@ -86,7 +86,7 @@ class Asset
         }
         for (Vec3d vec3d3 : targets) {
             BlockPos pos = new BlockPos ( vec3d3 );
-            if ( ! BlockUtil.canPlaceCrystal ( pos ) ) continue;
+            if ( ! BlockUtil.canPlaceCrystal ( pos, true, false, false) ) continue;
             this.placeCrystal ( pos );
             this.disable ( );
             break;

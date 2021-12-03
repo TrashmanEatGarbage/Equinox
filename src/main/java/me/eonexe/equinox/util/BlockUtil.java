@@ -16,9 +16,6 @@ import net.minecraft.network.play.client.CPacketAnimation;
 import net.minecraft.network.play.client.CPacketEntityAction;
 import net.minecraft.network.play.client.CPacketPlayerDigging;
 import net.minecraft.network.play.client.CPacketPlayerTryUseItemOnBlock;
-import net.minecraft.network.play.client.CPacketAnimation;
-import net.minecraft.network.play.client.CPacketEntityAction;
-import net.minecraft.network.play.client.CPacketPlayerTryUseItemOnBlock;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
@@ -199,7 +196,7 @@ public class BlockUtil
 
     public static List<BlockPos> possiblePlacePositions(float placeRange) {
         NonNullList positions = NonNullList.create();
-        positions.addAll(BlockUtil.getSphere(EntityUtil.getPlayerPos(BlockUtil.mc.player), placeRange, (int) placeRange, false, true, 0).stream().filter(BlockUtil::canPlaceCrystal).collect(Collectors.toList()));
+        positions.addAll(BlockUtil.getSphere(EntityUtil.getPlayerPos(BlockUtil.mc.player), placeRange, (int) placeRange, false, true, 0).stream().filter(blockPos -> canPlaceCrystal(blockPos, true, false, false)).collect(Collectors.toList()));
         return positions;
     }
 
@@ -231,7 +228,7 @@ public class BlockUtil
         return circleblocks;
     }
 
-    public static boolean canPlaceCrystal(BlockPos blockPos) {
+    public static boolean canPlaceCrystal(BlockPos blockPos, boolean b, boolean b1, boolean b2) {
         BlockPos boost = blockPos.add(0, 1, 0);
         BlockPos boost2 = blockPos.add(0, 2, 0);
         try {

